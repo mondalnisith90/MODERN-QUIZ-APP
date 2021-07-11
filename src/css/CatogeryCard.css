@@ -1,0 +1,37 @@
+.card_item {
+  background-color: white;
+  border-radius: 15px;
+  /* text-align: center; */
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: -15px 12px 34px -5px rgba(53, 45, 45, 0.75);
+  -webkit-box-shadow: -15px 12px 34px -5px rgba(53, 45, 45, 0.75);
+  -moz-box-shadow: -15px 12px 34px -5px rgba(53, 45, 45, 0.75);
+}
+
+.card_item:hover {
+  background-color: yellow;
+  color: white;
+}
+
+.catogery_icon {
+  font-size: 30px !important;
+  color: #e605b8;
+  margin-right: 15px;
+  margin-left: 8px;
+  margin-top: 0px;
+}
+
+.catogery_name {
+  color: black;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  width: 260px;
+}
+
+.arrow_icon {
+  font-size: 25px !important;
+  color: #aa00ee;
+  margin-left: 40px;
+  margin-top: 3px;
+}
