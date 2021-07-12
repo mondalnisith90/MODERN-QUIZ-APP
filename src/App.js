@@ -20,7 +20,7 @@ const App =  () => {
      <Switch>
        <Route exact path="/" component={Quiz} />
        <Route exact path="/quizform/:id/:catogery" component={QuizForm} />
-       <Route exact path="/quiz/:id/:difficultyLevel/:totalQuestions" component={QuizWindow} />
+       <Route exact path="/quiz/:id/:difficultyLevel/:totalQuestions/:catogery" component={QuizWindow} />
        <Route exact path="/register" component={Register} />
        <Route exact path="/login" component={Login} />
      </Switch>

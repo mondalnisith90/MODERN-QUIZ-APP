@@ -15,8 +15,8 @@ import "../css/QuizForm.css";
 const QuizForm = () => {
     const {id, catogery} = useParams();
     const [quizFormData, setQuizFormData] = useState({
-      totalQuestions: 15,
-      difficultyLevel: "medium"
+      totalQuestions: 10,
+      difficultyLevel: "any"
     });
     const [inputError, setInputError] = useState("");
     const {totalQuestions, difficultyLevel} = quizFormData;
@@ -39,6 +39,7 @@ const QuizForm = () => {
         event.preventDefault();
       }
     }
+
 
 
     return(<>
@@ -67,7 +68,7 @@ const QuizForm = () => {
 
      
 
-               <NavLink to={`/quiz/${id}/${difficultyLevel}/${totalQuestions}`} style={{textDecoration: "none"}}>
+               <NavLink to={`/quiz/${id}/${difficultyLevel}/${totalQuestions}/${catogery}`} style={{textDecoration: "none"}}>
                <Button variant="contained" color="secondary" onClick={quizStart} className="start_quiz_btn" endIcon={<DoubleArrowIcon/>}>
                 start Quiz
                </Button>
