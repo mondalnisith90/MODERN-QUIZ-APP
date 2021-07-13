@@ -11,15 +11,18 @@ import "../css/QuizWindow.css";
 let questionsArray = [];
 let timmerObj = null;
 
+
 const QuizWindow = () => {
     const {id, difficultyLevel, totalQuestions, catogery} = useParams();
  
     const [timmer, setTimmer] = useState({minute: 0, second: 0});
+    const [startTimmer, setTimmerStatus] = useState(false);
     useEffect(() => {
       fetchDataFromApi();
     }, []);
 
     useEffect(()=> {
+      if(startTimmer){
       const totalTimeMinute = Math.floor(totalQuestions*0.8); //total time in minute
       // const totalTimeMinute = 1;
       let totalTimeSecond = totalTimeMinute * 60; //total time in second
@@ -32,7 +35,8 @@ const QuizWindow = () => {
         }
       }, 1000);
       return ()=> clearInterval(timmerObj);
-    },[]);
+    }
+    },[startTimmer]);
 
 
     useEffect(()=>{
@@ -70,10 +74,11 @@ const QuizWindow = () => {
           const allQuestions = apiResponse.data.results; //this will give an array of all questions
           allQuestions.map((value, index)=> {
             questionsArray.push({question: value.question, catogery: value.category, difficultyLevel: value.difficulty,
-               allOptions: [...value.incorrect_answers, value.correct_answer], currectAnswer: value.correct_answer, userAnswer: null, userSelectedOption: null});
+               allOptions: shuffleArray([...value.incorrect_answers, value.correct_answer]), currectAnswer: value.correct_answer, userAnswer: null, userSelectedOption: null});
           });
           setCurrentQuestionNumber(1);
-          
+          setTimmerStatus(true);
+         
         }else{
           //means something wrong. not get  data from api
           throw new Error("Data not found");
@@ -83,6 +88,16 @@ const QuizWindow = () => {
         console.log(error);
       }
     }
+
+
+    const shuffleArray = (array) => {
+      //change the array element position randomly
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+  }
 
    
 
@@ -203,7 +218,7 @@ const QuizWindow = () => {
           {!quizSubmit ? 
           <>
 
-          <div className="d-flex align-items-center justify-content-center m-auto">
+          <div className="d-flex align-items-center justify-content-center m-auto p-2">
 
            <div className="quizwindow_main_div shadow"> 
             <div className="window_top_div d-flex align-items-center justify-content-between">

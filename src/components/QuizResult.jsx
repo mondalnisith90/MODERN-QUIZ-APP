@@ -66,21 +66,34 @@ const QuizResult = ({id, totalQuestions, catogery, questionsArray}) => {
                  <>
                 
                 <div className="answer_div">
-                 <h3 className="quizresult_question_div">{index+1}. {value.question}</h3>
-                 <div className="pl-4">
+                 <h3 className="quizresult_question_text">{index+1}. {value.question}</h3>
+                 <div className="pl-3">
                    <p className="quizresult_option_div">A. {value.allOptions[0]}</p>
                    <p className="quizresult_option_div">B. {value.allOptions[1]}</p>
                    <p className="quizresult_option_div">C. {value.allOptions[2]}</p>
                    <p className="quizresult_option_div">D. {value.allOptions[3]}</p>
                  </div>
-                 <div className="d-flex align-items-center justify-content-start mt-3">
+                 {/* <div className="d-flex align-items-center justify-content-start  mt-3">
                    <div>
                      <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
                    </div>
-                   <div className="ml-5">
+                   <div className="ml-0">
                      <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
                    </div>
+                   </div> */}
+                   <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
+                   <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
+                   {/* <div className="row mt-3">
+                   <div  className="col-md-12 m-auto d-block ">
+                     <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
                    </div>
+                   <div className="col-md-12 m-auto d-block">
+                     <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
+                   </div>
+                   </div> */}
+
+
+
                    </div>
 
                    </>

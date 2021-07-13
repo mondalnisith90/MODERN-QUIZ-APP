@@ -2,23 +2,24 @@ nav {
   background-color: #f5f7f2;
   /* background-image: linear-gradient(120deg, #0d7c85, #03ebfc, #aa00ee); */
 }
+
 .nav-link {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
   margin: 0px 20px 0px 0px;
   color: rgb(31, 29, 29) !important;
 }
 
 li :hover {
-  background-color: #e6059f;
+  background-color: #0bd9c8;
   border-radius: 0.2cm;
   color: white !important;
   /* transition: 0.2s; */
 }
 
 .navlink_active {
-  background-color: #e6059f;
+  background-color: #0bd9c8;
   border-radius: 0.2cm;
   color: white !important;
 }
@@ -28,4 +29,12 @@ li :hover {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   color: #b004ad !important;
+}
+
+.nav_app_heading {
+  /* text-align: center; */
+  font-size: 25px !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #15a180;
 }

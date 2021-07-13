@@ -43,7 +43,10 @@ const QuizForm = () => {
 
 
     return(<>
-        <section className="quizform_root_div d-flex justify-content-center align-items-center ">
+        <section className="quizform_root_div ">
+        <div  className="d-flex justify-content-center m-auto d-block align-items-center p-4">
+
+   
          <div className="quizform_main_div ">
              <h1 className="quizform_heading">{catogery}</h1>
               <div className="quiz_form_div ">
@@ -66,8 +69,6 @@ const QuizForm = () => {
                </FormControl>
                </div>
 
-     
-
                <NavLink to={`/quiz/${id}/${difficultyLevel}/${totalQuestions}/${catogery}`} style={{textDecoration: "none"}}>
                <Button variant="contained" color="secondary" onClick={quizStart} className="start_quiz_btn" endIcon={<DoubleArrowIcon/>}>
                 start Quiz
@@ -77,7 +78,7 @@ const QuizForm = () => {
 
               </div>
          </div>
-
+         </div>
         </section>
     </>);
 }

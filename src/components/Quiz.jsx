@@ -9,12 +9,12 @@ const Quiz = () => {
         <> 
          <section className="root_div">
          <div className="header_img_div">
-         <div className="body_div">
-             <h1 className="quiz_catogery_header">Select Quiz Catagory</h1>
+         <h1 className="quiz_catogery_header">Select Quiz Catagory</h1>
              <hr className="horizental_line"/>
-             <div className="quiz_catagory_div container">
+           <div className="quiz_catagory_div container">
+           
              {
-                catogeryRowCount.map((index)=>{
+                catogeryRowCount.map((value, index)=>{
                     return(<>
                     <div className="row" key={index}>
                    <CatogeryCard id={QuizCatogery[++count].id} catogery={QuizCatogery[count].catogery} Icon={QuizCatogery[count].icon} />
@@ -23,9 +23,8 @@ const Quiz = () => {
                     </>)
                 })
              }
-           </div>
+           </div> 
           </div>
-         </div>
 
          </section>
         </>

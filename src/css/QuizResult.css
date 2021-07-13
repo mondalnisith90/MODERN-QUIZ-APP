@@ -18,7 +18,7 @@
 .result_heading_text,
 .answer_heading_text {
   font-family: "Oswald", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   color: #0eb586;
   align-items: center;
 }
@@ -68,26 +68,28 @@
 
 .quiz_answer_div {
   margin-top: 30px;
-  padding-left: 30px;
+  padding-left: 10px;
 }
 
-.quizresult_question_div {
-  font-size: 20px;
+.quizresult_question_text {
+  font-size: 15px;
+  padding-right: 6px;
 }
 
 .quizresult_option_div {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .user_answer_text {
   color: orange;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .correct_answer_text {
   color: #08bd0b;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
+  margin-top: -10px;
 }
