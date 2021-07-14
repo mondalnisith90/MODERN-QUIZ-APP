@@ -4,11 +4,6 @@
   padding-bottom: 10px;
   background-image: linear-gradient(120deg, #0d7c85, #03ebfc, #aa00ee);
 }
-/* 
-.header_img_div {
-  background-image: linear-gradient(120deg, #0d7c85, #03ebfc, #aa00ee);
-  padding-top: 100px;
-} */
 
 .quiz_catogery_header {
   text-align: center;
@@ -17,6 +12,7 @@
   font-weight: 400px;
   color: #ffffff;
   /* margin-top: 50px; */
+  margin-top: 10px;
 }
 
 .horizental_line {
@@ -24,11 +20,6 @@
   height: 5px !important;
   background: linear-gradient(#ffffff, #ffffff);
 }
-/* 
-.body_div {
-  width: 100%;
-  height: 100%;
-} */
 
 .quiz_catagory_div {
   margin-top: 20px;

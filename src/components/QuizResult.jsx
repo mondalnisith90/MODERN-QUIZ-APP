@@ -73,27 +73,8 @@ const QuizResult = ({id, totalQuestions, catogery, questionsArray}) => {
                    <p className="quizresult_option_div">C. {value.allOptions[2]}</p>
                    <p className="quizresult_option_div">D. {value.allOptions[3]}</p>
                  </div>
-                 {/* <div className="d-flex align-items-center justify-content-start  mt-3">
-                   <div>
-                     <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
-                   </div>
-                   <div className="ml-0">
-                     <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
-                   </div>
-                   </div> */}
                    <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
                    <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
-                   {/* <div className="row mt-3">
-                   <div  className="col-md-12 m-auto d-block ">
-                     <p className="user_answer_text">Your answer: {value.userSelectedOption ? value.userSelectedOption : "no answer"}</p>
-                   </div>
-                   <div className="col-md-12 m-auto d-block">
-                     <p className="correct_answer_text">Correct answer: {  value.currectAnswer}</p>
-                   </div>
-                   </div> */}
-
-
-
                    </div>
 
                    </>

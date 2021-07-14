@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../css/Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({userLoginStatus, userName}) => {
     return(
         <>
 <nav className="navbar navbar-expand-lg fixed-top ">
@@ -16,12 +16,25 @@ const Navbar = () => {
         <li className="nav-item">
           <NavLink className="nav-link " activeClassName="navlink_active" exact to="/" aria-current="page" >Quiz</NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="navlink_active" exact to="register" aria-current="page" >Register</NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="navlink_active" exact to="/login" aria-current="page">Login</NavLink>
-        </li>
+        {userLoginStatus ? 
+          <>
+          {/* User already login. sHOW LOGOUT option */}
+            <li className="nav-item">
+            <span className="nav-link"  aria-current="page">{userName}</span>
+            </li>
+            <li className="nav-item">
+            <NavLink className="nav-link" activeClassName="navlink_active" exact to="/logout" aria-current="page">Logout</NavLink>
+            </li>
+          </> : 
+          //User not login or register yet.
+          <>
+           <li className="nav-item">
+             <NavLink className="nav-link" activeClassName="navlink_active" exact to="/register" aria-current="page" >Register</NavLink>
+           </li>
+           <li className="nav-item">
+             <NavLink className="nav-link" activeClassName="navlink_active" exact to="/login" aria-current="page">Login</NavLink>
+           </li>
+        </> }
       </ul>
   
     </div>

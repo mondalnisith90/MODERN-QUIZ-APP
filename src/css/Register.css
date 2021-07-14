@@ -1,0 +1,66 @@
+.register_root_div {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(120deg, #0d7c85, #03ebfc, #aa00ee);
+  padding: 65px 10px 20px 10px;
+}
+
+.reg_row_div {
+  border-bottom-left-radius: 0.3cm;
+  border-bottom-right-radius: 0.3cm;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.form_style {
+  /* background-image: linear-gradient(120deg, #07f08b, #07f0f0); */
+  background-color: #ffffff;
+  border-radius: 0.3cm;
+  margin-top: 0px;
+}
+
+.metrial_icon {
+  margin-right: 5px;
+  color: black;
+}
+
+.nav_link {
+  text-decoration: none !important;
+  color: #ee00aa;
+  font-weight: bold;
+}
+
+.singin_btn {
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  background-color: #8605b5 !important;
+}
+
+.signin_div {
+  text-align: center;
+  background-color: #8605b5;
+  /* background-image: linear-gradient(160deg, #0c9fcc, #0c9fcc); */
+  padding: 5px;
+  border-top-left-radius: 0.3;
+  border-top-right-radius: 0.3;
+  border-bottom-left-radius: 1.5cm;
+  border-bottom-right-radius: 1.5cm;
+}
+
+.sign_heading {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+}
+
+.input_error_span {
+  color: #ee00aa;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.reg_label_text {
+  font-size: 14px;
+}
