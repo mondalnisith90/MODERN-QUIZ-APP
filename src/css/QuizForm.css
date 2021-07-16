@@ -14,8 +14,7 @@
 }
 
 .quizform_main_div {
-  /* width: 500px; */
-  min-width: 290px;
+  width: 360px;
   padding: 20px 30px 30px 30px;
   background-color: white;
   border-radius: 10px;

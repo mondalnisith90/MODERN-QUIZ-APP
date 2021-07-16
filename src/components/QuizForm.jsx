@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { useState } from "react";
 import validator from "validator";
+import axios from "axios";
 import "../css/QuizForm.css";
 
 
@@ -20,6 +21,7 @@ const QuizForm = () => {
     });
     const [inputError, setInputError] = useState("");
     const {totalQuestions, difficultyLevel} = quizFormData;
+    const history = useHistory();
     
 
     const formInputClick = (event) => {
@@ -30,13 +32,49 @@ const QuizForm = () => {
       setQuizFormData({...quizFormData, [fieldName]: fieldValue});
     }
 
-    const quizStart = (event) => {
+    const quizStart = async(event) => {
+      // event.preventDefault();
       if(totalQuestions > 50 || totalQuestions <10){
         setInputError("total questions number must be between 10 to 50");
         event.preventDefault();
+        return;
       }else if(! validator.isInt(""+totalQuestions)){
         setInputError("total questions should be an integer number");
         event.preventDefault();
+        return;
+      }
+      const apiStatusCode =  await getApiStatusCode();
+      if(apiStatusCode == 0){
+        //all ok. Open quiz window
+        const url = `/quiz/${id}/${difficultyLevel}/${totalQuestions}/${catogery}`;
+        history.push(url);
+      }else if(apiStatusCode == 1){
+        //total questions number enter by user is not present in trivia api
+        setInputError("This catogery not contain this amount of questions. Please reduce the number.");
+        event.preventDefault();
+        return;
+      }else if(apiStatusCode == 2){
+        //something went wrong on server
+        setInputError("Something went wrong on the server. Please try with another catogery.");
+        event.preventDefault();
+        return;
+      }
+    }
+
+    const getApiStatusCode = async () => {
+      let apiUrl = ``;
+      if(difficultyLevel == "any"){
+        apiUrl = `https://opentdb.com/api.php?amount=${totalQuestions}&category=${id}&type=multiple`;
+      }else{
+        apiUrl = `https://opentdb.com/api.php?amount=${totalQuestions}&category=${id}&difficulty=${difficultyLevel}&type=multiple`;
+      }
+      try{
+        const apiResponse = await axios.get(apiUrl);
+        const apiData = await apiResponse.data;
+        return apiData.response_code;
+      }catch(error){
+        console.log(error.message)
+        return 2;
       }
     }
 
@@ -69,11 +107,9 @@ const QuizForm = () => {
                </FormControl>
                </div>
 
-               <NavLink to={`/quiz/${id}/${difficultyLevel}/${totalQuestions}/${catogery}`} style={{textDecoration: "none"}}>
                <Button variant="contained" color="secondary" onClick={quizStart} className="start_quiz_btn" endIcon={<DoubleArrowIcon/>}>
                 start Quiz
                </Button>
-               </NavLink>
              </form>
 
               </div>

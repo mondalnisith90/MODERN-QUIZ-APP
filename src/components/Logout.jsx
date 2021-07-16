@@ -4,7 +4,7 @@ import axios from "axios";
 const Logout = ({setUserLoginStatus}) => {
     const histroy  = useHistory();
     const userLogout = async () => {
-        const url = "http://localhost:8000/users/logout"
+        const url = "https://suntechnisith.herokuapp.com/users/logout"
         try {
             const serverResponse = await axios.get(url, {withCredentials: true});
             if(serverResponse.status === 200){

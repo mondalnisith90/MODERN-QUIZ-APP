@@ -116,7 +116,7 @@ const Register = () => {
             setLoadingbarState(true);
             try{
                 // { withCredentials: true }
-                const url = "http://localhost:8000/users/signin";
+                const url = "https://suntechnisith.herokuapp.com/users/signin";
                 const data =  {firstName: firstName, lastName: lastName, email: email, phone: phoneNumber, password: password, cpassword: confirmPassword};
                 const serverResponse = await axios.post(url, data);
                 // console.log(serverResponse);

@@ -21,9 +21,11 @@ const App =  () => {
   const [userLoginStatus, setUserLoginStatus] = useState(false);
   const [userName, setUserName] = useState("");
   const fetchUserData = async () => {
-    const url = "http://localhost:8000/users/data";
+    const url = "https://suntechnisith.herokuapp.com/users/data";
     try {
       const serverResponse = await axios.get(url, {withCredentials: true});
+      console.log("App.js is called");
+      console.log(serverResponse);
       if(serverResponse.status === 200){
          //means user already loged in..
         setUserLoginStatus(true);

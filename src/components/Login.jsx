@@ -40,7 +40,7 @@ const Login = ({setUserLoginStatus}) => {
     const loginFormSubmit = async (event) => {
         event.preventDefault();
         //send data to server for user login
-        const url = "http://localhost:8000/users/login";
+        const url = "https://suntechnisith.herokuapp.com/users/login";
         const data = {email, password};
         setLoadingbarState(true);
         try {
